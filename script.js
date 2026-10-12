@@ -1299,9 +1299,9 @@ const products = [
   name: "Bolsas 5",
   description: "Colección de Bolsas.",
   models: [
-    { image: "./img/Bolsas/bs61.jpg" },
-    { image: "./img/Bolsas/bs62.jpg" },
-    { image: "./img/Bolsas/bs63.jpg" },
+    { image: "./img/Bolsas/bS61.jpg" },
+    { image: "./img/Bolsas/bS62.jpg" },
+    { image: "./img/Bolsas/bS63.jpg" },
     { image: "./img/Bolsas/bS64.jpg" },
     { image: "./img/Bolsas/bS65.jpg" },
     { image: "./img/Bolsas/bS66.jpg" },
@@ -1358,7 +1358,6 @@ const products = [
     { image: "./img/Bolsas/bS97.jpg" },
     { image: "./img/Bolsas/bS98.jpg" },
     { image: "./img/Bolsas/bS99.jpg" },
-    { image: "./img/Bolsas/bS100.jpg" },
     { image: "./img/Bolsas/bS101.jpg" },
     { image: "./img/Bolsas/bS102.jpg" },
     { image: "./img/Bolsas/bS103.jpg" },
@@ -1399,10 +1398,10 @@ const products = [
   name: "Bolsas 9",
   description: "Colección de Bolsas.",
   models: [
-    { image: "./img/Bolsas/bs121.jpg" },
-    { image: "./img/Bolsas/bs122.jpg" },
-    { image: "./img/Bolsas/bs123.jpg" },
-    { image: "./img/Bolsas/bs124.jpg" }
+    { image: "./img/Bolsas/bS121.jpg" },
+    { image: "./img/Bolsas/bS122.jpg" },
+    { image: "./img/Bolsas/bS123.jpg" },
+    { image: "./img/Bolsas/bS124.jpg" }
   ]
 },
 
