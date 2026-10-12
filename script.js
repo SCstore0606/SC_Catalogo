@@ -5,8 +5,8 @@ const products = [
   /* === Adidas Campus 00s === */
   {
     category: "Tenis",
-    name: "Nike AIR 270",
-    description: "Colección de tenis Nike.",
+    name: "Adidas Campus 00s",
+    description: "Colección de tenis Adidas.",
     models: [
       {
         image: "./img/Adidas_Campus_00s/Campus1.jpg"
@@ -135,8 +135,8 @@ const products = [
   /* === Balenciaga === */
   {
     category: "Tenis",
-    name: "Nike AIR 270",
-    description: "Colección de tenis Nike.",
+    name: "Balenciaga",
+    description: "Colección de tenis Balenciaga.",
     models: [
       {
         image: "./img/Balenciaga/balen1.jpg"
@@ -1036,10 +1036,6 @@ const products = [
     ]
   }, 
 
-  
-
-
-
 
 
   /* =========================
@@ -1293,7 +1289,6 @@ const products = [
 },
 
 /* === Bolsas 5 === */
-
 {
   category: "Accesorios",
   name: "Bolsas 5",
@@ -1318,7 +1313,6 @@ const products = [
 },
 
 /* === Bolsas 6 === */
-
 {
   category: "Accesorios",
   name: "Bolsas 6",
@@ -1343,7 +1337,6 @@ const products = [
 },
 
 /* === Bolsas 7 === */
-
 {
   category: "Accesorios",
   name: "Bolsas 7",
@@ -1367,7 +1360,6 @@ const products = [
 },
 
 /* === Bolsas 8 === */
-
 {
   category: "Accesorios",
   name: "Bolsas 8",
@@ -1392,7 +1384,6 @@ const products = [
 },
 
 /* === Bolsas 9 === */
-
 {
   category: "Accesorios",
   name: "Bolsas 9",
@@ -1406,19 +1397,67 @@ const products = [
 },
 
 
-
-
   /* === Lociones Victorias Secrets === */
 
   {
     category: "Lociones",
     name: "Lociones Victorias Secrets ",
     description: "Colección de Lociones Victorias Secrets.",
-
     models: [
       {
         image: "./img/Lociones _Victorias_Secrets/lc1.jpg"
       }
+    ]
+  },
+
+ /* === Pandora === */
+  {
+    category: "Pandora",
+    name: "Accesorios 1",
+    description: "Colección Pandora.",
+    models: [
+        { image: "./img/Pandora/pandora1.jpg" },
+        { image: "./img/Pandora/pandora2.jpg" },
+        { image: "./img/Pandora/pandora3.jpg" },
+        { image: "./img/Pandora/pandora4.jpg" },
+        { image: "./img/Pandora/pandora5.jpg" },
+        { image: "./img/Pandora/pandora6.jpg" },
+        { image: "./img/Pandora/pandora7.jpg" },
+        { image: "./img/Pandora/pandora8.jpg" }
+    ]
+  },
+
+  /* === Pandora === */
+  {
+    category: "Pandora",
+    name: "Accesorios 2",
+    description: "Colección Pandora.",
+    models: [
+        { image: "./img/Pandora/pandora9.jpg" },
+        { image: "./img/Pandora/pandora10.jpg" },
+        { image: "./img/Pandora/pandora11.jpg" },
+        { image: "./img/Pandora/pandora12.jpg" },
+        { image: "./img/Pandora/pandora13.jpg" },
+        { image: "./img/Pandora/pandora14.jpg" },
+        { image: "./img/Pandora/pandora15.jpg" },
+        { image: "./img/Pandora/pandora16.jpg" }
+    ]
+  },
+
+  /* === Pandora === */
+  {
+    category: "Pandora",
+    name: "Accesorios 3",
+    description: "Colección Pandora.",
+    models: [
+        { image: "./img/Pandora/pandora17.jpg" },
+        { image: "./img/Pandora/pandora18.jpg" },
+        { image: "./img/Pandora/pandora19.jpg" },
+        { image: "./img/Pandora/pandora20.jpg" },
+        { image: "./img/Pandora/pandora21.jpg" },
+        { image: "./img/Pandora/pandora22.jpg" },
+        { image: "./img/Pandora/pandora23.jpg" },
+        { image: "./img/Pandora/pandora24.jpg" }
     ]
   }
 ];
