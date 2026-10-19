@@ -104,6 +104,12 @@ button {
 
 .product-section {
   margin-bottom: 60px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
+#sentinel {
+  height: 1px;
 }
 
 .product-info {
@@ -115,10 +121,6 @@ button {
   font-size: 25px;
 }
 
-.product-info p {
-  margin: 0;
-  color: #666;
-}
 
 
 /* =========================
@@ -140,10 +142,6 @@ button {
    Product carousel
 ========================= */
 
-.models h3 {
-  margin: 0 0 15px;
-  font-size: 18px;
-}
 
 .carousel-container {
   display: flex;
@@ -195,12 +193,6 @@ button {
   object-fit: contain;
 }
 
-.thumbnail span {
-  display: block;
-  margin-top: 8px;
-  font-size: 13px;
-  text-align: center;
-}
 
 
 /* =========================
