@@ -1630,7 +1630,296 @@ const products = [
         { image: "./img2/ChamarrasYSudaderas/cs51.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs54.jpeg" }
     ]
-  }
+  },
+
+  /* === Gorras === */
+  /* === Gorras === */
+  /* === Gorras === */
+
+/* === Gorras 1 === */
+{
+  category: "Gorras",
+  name: "Gorras 1",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr1.jpeg" },
+    { image: "./img2/Gorras/gr2.jpeg" },
+    { image: "./img2/Gorras/gr3.jpeg" },
+    { image: "./img2/Gorras/gr4.jpeg" },
+    { image: "./img2/Gorras/gr5.jpeg" },
+    { image: "./img2/Gorras/gr6.jpeg" },
+    { image: "./img2/Gorras/gr7.jpeg" },
+    { image: "./img2/Gorras/gr8.jpeg" },
+    { image: "./img2/Gorras/gr9.jpeg" },
+    { image: "./img2/Gorras/gr10.jpeg" },
+    { image: "./img2/Gorras/gr11.jpeg" },
+    { image: "./img2/Gorras/gr12.jpeg" },
+    { image: "./img2/Gorras/gr13.jpeg" },
+    { image: "./img2/Gorras/gr14.jpeg" },
+    { image: "./img2/Gorras/gr15.jpeg" }
+  ]
+},
+
+/* === Gorras 2 === */
+{
+  category: "Gorras",
+  name: "Gorras 2",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr16.jpeg" },
+    { image: "./img2/Gorras/gr17.jpeg" },
+    { image: "./img2/Gorras/gr18.jpeg" },
+    { image: "./img2/Gorras/gr19.jpeg" },
+    { image: "./img2/Gorras/gr20.jpeg" },
+    { image: "./img2/Gorras/gr21.jpeg" },
+    { image: "./img2/Gorras/gr22.jpeg" },
+    { image: "./img2/Gorras/gr23.jpeg" },
+    { image: "./img2/Gorras/gr24.jpeg" },
+    { image: "./img2/Gorras/gr25.jpeg" },
+    { image: "./img2/Gorras/gr26.jpeg" },
+    { image: "./img2/Gorras/gr27.jpeg" },
+    { image: "./img2/Gorras/gr28.jpeg" },
+    { image: "./img2/Gorras/gr29.jpeg" },
+    { image: "./img2/Gorras/gr30.jpeg" }
+  ]
+},
+
+/* === Gorras 3 === */
+{
+  category: "Gorras",
+  name: "Gorras 3",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr31.jpeg" },
+    { image: "./img2/Gorras/gr32.jpeg" },
+    { image: "./img2/Gorras/gr33.jpeg" },
+    { image: "./img2/Gorras/gr34.jpeg" },
+    { image: "./img2/Gorras/gr35.jpeg" },
+    { image: "./img2/Gorras/gr36.jpeg" },
+    { image: "./img2/Gorras/gr37.jpeg" },
+    { image: "./img2/Gorras/gr38.jpeg" },
+    { image: "./img2/Gorras/gr39.jpeg" },
+    { image: "./img2/Gorras/gr40.jpeg" },
+    { image: "./img2/Gorras/gr41.jpeg" },
+    { image: "./img2/Gorras/gr42.jpeg" },
+    { image: "./img2/Gorras/gr43.jpeg" },
+    { image: "./img2/Gorras/gr44.jpeg" },
+    { image: "./img2/Gorras/gr45.jpeg" }
+  ]
+},
+
+/* === Gorras 4 === */
+{
+  category: "Gorras",
+  name: "Gorras 4",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr46.jpeg" },
+    { image: "./img2/Gorras/gr47.jpeg" },
+    { image: "./img2/Gorras/gr48.jpeg" },
+    { image: "./img2/Gorras/gr49.jpeg" },
+    { image: "./img2/Gorras/gr50.jpeg" },
+    { image: "./img2/Gorras/gr51.jpeg" },
+    { image: "./img2/Gorras/gr52.jpeg" },
+    { image: "./img2/Gorras/gr53.jpeg" },
+    { image: "./img2/Gorras/gr54.jpeg" },
+    { image: "./img2/Gorras/gr55.jpeg" },
+    { image: "./img2/Gorras/gr56.jpeg" },
+    { image: "./img2/Gorras/gr57.jpeg" },
+    { image: "./img2/Gorras/gr58.jpeg" },
+    { image: "./img2/Gorras/gr59.jpeg" },
+    { image: "./img2/Gorras/gr60.jpeg" }
+  ]
+},
+
+/* === Gorras 5 === */
+{
+  category: "Gorras",
+  name: "Gorras 5",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr61.jpeg" },
+    { image: "./img2/Gorras/gr62.jpeg" },
+    { image: "./img2/Gorras/gr63.jpeg" },
+    { image: "./img2/Gorras/gr64.jpeg" },
+    { image: "./img2/Gorras/gr65.jpeg" },
+    { image: "./img2/Gorras/gr66.jpeg" },
+    { image: "./img2/Gorras/gr67.jpeg" },
+    { image: "./img2/Gorras/gr68.jpeg" },
+    { image: "./img2/Gorras/gr69.jpeg" },
+    { image: "./img2/Gorras/gr70.jpeg" },
+    { image: "./img2/Gorras/gr71.jpeg" },
+    { image: "./img2/Gorras/gr72.jpeg" },
+    { image: "./img2/Gorras/gr73.jpeg" },
+    { image: "./img2/Gorras/gr74.jpeg" },
+    { image: "./img2/Gorras/gr75.jpeg" }
+  ]
+},
+
+/* === Gorras 6 === */
+{
+  category: "Gorras",
+  name: "Gorras 6",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr76.jpeg" },
+    { image: "./img2/Gorras/gr77.jpeg" },
+    { image: "./img2/Gorras/gr78.jpeg" },
+    { image: "./img2/Gorras/gr79.jpeg" },
+    { image: "./img2/Gorras/gr80.jpeg" },
+    { image: "./img2/Gorras/gr81.jpeg" },
+    { image: "./img2/Gorras/gr82.jpeg" },
+    { image: "./img2/Gorras/gr83.jpeg" },
+    { image: "./img2/Gorras/gr84.jpeg" },
+    { image: "./img2/Gorras/gr85.jpeg" },
+    { image: "./img2/Gorras/gr86.jpeg" },
+    { image: "./img2/Gorras/gr87.jpeg" },
+    { image: "./img2/Gorras/gr88.jpeg" },
+    { image: "./img2/Gorras/gr89.jpeg" },
+    { image: "./img2/Gorras/gr90.jpeg" }
+  ]
+},
+
+/* === Gorras 7 === */
+{
+  category: "Gorras",
+  name: "Gorras 7",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr91.jpeg" },
+    { image: "./img2/Gorras/gr92.jpeg" },
+    { image: "./img2/Gorras/gr93.jpeg" },
+    { image: "./img2/Gorras/gr94.jpeg" },
+    { image: "./img2/Gorras/gr95.jpeg" },
+    { image: "./img2/Gorras/gr96.jpeg" },
+    { image: "./img2/Gorras/gr97.jpeg" },
+    { image: "./img2/Gorras/gr98.jpeg" },
+    { image: "./img2/Gorras/gr99.jpeg" },
+    { image: "./img2/Gorras/gr100.jpeg" },
+    { image: "./img2/Gorras/gr101.jpeg" },
+    { image: "./img2/Gorras/gr102.jpeg" },
+    { image: "./img2/Gorras/gr103.jpeg" },
+    { image: "./img2/Gorras/gr104.jpeg" },
+    { image: "./img2/Gorras/gr105.jpeg" }
+  ]
+},
+
+/* === Gorras 8 === */
+{
+  category: "Gorras",
+  name: "Gorras 8",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr106.jpeg" },
+    { image: "./img2/Gorras/gr107.jpeg" },
+    { image: "./img2/Gorras/gr108.jpeg" },
+    { image: "./img2/Gorras/gr109.jpeg" },
+    { image: "./img2/Gorras/gr110.jpeg" },
+    { image: "./img2/Gorras/gr111.jpeg" },
+    { image: "./img2/Gorras/gr112.jpeg" },
+    { image: "./img2/Gorras/gr113.jpeg" },
+    { image: "./img2/Gorras/gr114.jpeg" },
+    { image: "./img2/Gorras/gr115.jpeg" },
+    { image: "./img2/Gorras/gr116.jpeg" },
+    { image: "./img2/Gorras/gr117.jpeg" },
+    { image: "./img2/Gorras/gr118.jpeg" },
+    { image: "./img2/Gorras/gr119.jpeg" },
+    { image: "./img2/Gorras/gr120.jpeg" }
+  ]
+},
+
+/* === Gorras 9 === */
+{
+  category: "Gorras",
+  name: "Gorras 9",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr121.jpeg" },
+    { image: "./img2/Gorras/gr122.jpeg" },
+    { image: "./img2/Gorras/gr123.jpeg" },
+    { image: "./img2/Gorras/gr124.jpeg" },
+    { image: "./img2/Gorras/gr125.jpeg" },
+    { image: "./img2/Gorras/gr126.jpeg" },
+    { image: "./img2/Gorras/gr127.jpeg" },
+    { image: "./img2/Gorras/gr128.jpeg" },
+    { image: "./img2/Gorras/gr129.jpeg" },
+    { image: "./img2/Gorras/gr130.jpeg" },
+    { image: "./img2/Gorras/gr131.jpeg" },
+    { image: "./img2/Gorras/gr132.jpeg" },
+    { image: "./img2/Gorras/gr133.jpeg" },
+    { image: "./img2/Gorras/gr134.jpeg" },
+    { image: "./img2/Gorras/gr135.jpeg" }
+  ]
+},
+
+/* === Gorras 10 === */
+{
+  category: "Gorras",
+  name: "Gorras 10",
+  description: "Colección de Gorras.",
+  models: [
+    { image: "./img2/Gorras/gr136.jpeg" },
+    { image: "./img2/Gorras/gr137.jpeg" },
+    { image: "./img2/Gorras/gr138.jpeg" },
+    { image: "./img2/Gorras/gr139.jpeg" },
+    { image: "./img2/Gorras/gr140.jpeg" },
+    { image: "./img2/Gorras/gr141.jpeg" },
+    { image: "./img2/Gorras/gr142.jpeg" },
+    { image: "./img2/Gorras/gr143.jpeg" },
+    { image: "./img2/Gorras/gr144.jpeg" },
+    { image: "./img2/Gorras/gr145.jpeg" },
+    { image: "./img2/Gorras/gr146.jpeg" },
+    { image: "./img2/Gorras/gr147.jpeg" }
+  ]
+},
+
+/* === Perfumes Originales Para Caballeros === */
+/* === Perfumes Originales Para Caballeros === */
+/* === Perfumes Originales Para Caballeros 1 === */
+{
+  category: "Perfumes Originales Para Caballeros",
+  name: "Perfumes Originales Para Caballeros 1",
+  description: "Colección de Perfumes Originales Para Caballeros.",
+  models: [
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm1.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm2.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm3.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm4.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm5.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm6.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm7.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm8.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm9.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm10.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm11.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm12.jpeg" }
+  ]
+},
+
+/* === Perfumes Originales Para Caballeros 2 === */
+{
+  category: "Perfumes Originales Para Caballeros",
+  name: "Perfumes Originales Para Caballeros 2",
+  description: "Colección de Perfumes Originales Para Caballeros.",
+  models: [
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm13.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm14.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm15.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm16.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm17.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm18.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm19.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm20.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm21.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm22.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm23.jpeg" },
+    { image: "./img2/PerfumesOriginalesParaCaballero/PrHm24.jpeg" }
+  ]
+},
+
+
+
+
 
 ];
 
