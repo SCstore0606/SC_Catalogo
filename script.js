@@ -817,7 +817,6 @@ const products = [
     ]
   }, 
 
-
       /* === Botas Vaqueras === */
       /* === Botas Vaqueras === */
       /* === Botas Vaqueras 1 === */
@@ -1041,10 +1040,10 @@ const products = [
   /* =========================
    Product data
 ========================= */
-  /* === Playeras === */
+  /* === Playeras 1 === */
   {
     category: "Ropa",
-    name: "Playeras",
+    name: "Playeras 1",
     description: "Colección de Playeras.",
     models: [
       {
@@ -1094,6 +1093,93 @@ const products = [
       }
     ]
   }, 
+
+  /* === Playeras 2 === */
+{
+  category: "Ropa",
+  name: "Playeras 2",
+  description: "Colección de Playeras.",
+  models: [
+    {image: "./img2/PlayerasYCamisas/pc1.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc2.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc3.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc4.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc5.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc6.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc7.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc8.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc9.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc10.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc11.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc12.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc13.jpeg"}
+  ]
+},
+
+/* === Playeras 3 === */
+{
+  category: "Ropa",
+  name: "Playeras 3",
+  description: "Colección de Playeras.",
+  models: [
+    {image: "./img2/PlayerasYCamisas/pc14.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc15.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc16.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc17.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc18.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc19.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc20.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc21.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc22.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc23.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc24.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc25.jpeg"}
+  ]
+},
+
+/* === Playeras 4 === */
+{
+  category: "Ropa",
+  name: "Playeras 4",
+  description: "Colección de Playeras.",
+  models: [
+    {image: "./img2/PlayerasYCamisas/pc26.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc27.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc28.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc29.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc30.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc31.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc32.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc33.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc34.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc35.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc36.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc37.jpeg"}
+  ]
+},
+
+/* === Playeras 5 === */
+{
+  category: "Ropa",
+  name: "Playeras 5",
+  description: "Colección de Playeras.",
+  models: [
+    {image: "./img2/PlayerasYCamisas/pc38.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc39.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc40.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc41.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc42.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc43.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc44.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc45.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc46.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc47.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc48.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc49.jpeg"},
+    {image: "./img2/PlayerasYCamisas/pc50.jpeg"}
+  ]
+},
+
   /* === Pantalones American Eagle === */
   {
     category: "Ropa",
@@ -1237,9 +1323,7 @@ const products = [
     ]
   }, 
 
-
   /* === Bolsas 3 === */
-
 {
   category: "Accesorios",
   name: "Bolsas 3",
@@ -1264,7 +1348,6 @@ const products = [
 },
 
 /* === Bolsas 4 === */
-
 {
   category: "Accesorios",
   name: "Bolsas 4",
@@ -1410,7 +1493,7 @@ const products = [
     ]
   },
 
- /* === Pandora === */
+ /* === Pandora 1=== */
   {
     category: "Pandora",
     name: "Accesorios 1",
@@ -1427,7 +1510,7 @@ const products = [
     ]
   },
 
-  /* === Pandora === */
+   /* === Pandora 2 === */
   {
     category: "Pandora",
     name: "Accesorios 2",
@@ -1444,7 +1527,7 @@ const products = [
     ]
   },
 
-  /* === Pandora === */
+  /* === Pandora 3 === */
   {
     category: "Pandora",
     name: "Accesorios 3",
@@ -1461,10 +1544,10 @@ const products = [
     ]
   },
 
-   /* === Pandora === */
+   /* === Chamarras y Sudaderas 1 === */
   {
     category: "Chamarras y Sudaderas",
-    name: "Chamarras y Sudaderas",
+    name: "Chamarras y Sudaderas 1",
     description: "Colección Chamarras y Sudaderas.",
     models: [
         { image: "./img2/ChamarrasYSudaderas/cs1.jpeg" },
@@ -1480,7 +1563,16 @@ const products = [
         { image: "./img2/ChamarrasYSudaderas/cs11.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs12.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs13.jpeg" },
-        { image: "./img2/ChamarrasYSudaderas/cs14.jpeg" },
+        { image: "./img2/ChamarrasYSudaderas/cs14.jpeg" }
+    ]
+  },
+
+  /* === Chamarras y Sudaderas 2 === */
+  {
+    category: "Chamarras y Sudaderas",
+    name: "Chamarras y Sudaderas 2",
+    description: "Colección Chamarras y Sudaderas.",
+    models: [
         { image: "./img2/ChamarrasYSudaderas/cs15.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs16.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs17.jpeg" },
@@ -1494,7 +1586,16 @@ const products = [
         { image: "./img2/ChamarrasYSudaderas/cs25.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs26.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs27.jpeg" },
-        { image: "./img2/ChamarrasYSudaderas/cs28.jpeg" },
+        { image: "./img2/ChamarrasYSudaderas/cs28.jpeg" }
+    ]
+  },
+
+  /* === Chamarras y Sudaderas 3 === */
+  {
+    category: "Chamarras y Sudaderas",
+    name: "Chamarras y Sudaderas 3",
+    description: "Colección Chamarras y Sudaderas.",
+    models: [
         { image: "./img2/ChamarrasYSudaderas/cs29.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs30.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs31.jpeg" },
@@ -1508,7 +1609,16 @@ const products = [
         { image: "./img2/ChamarrasYSudaderas/cs39.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs40.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs41.jpeg" },
-        { image: "./img2/ChamarrasYSudaderas/cs42.jpeg" },
+        { image: "./img2/ChamarrasYSudaderas/cs42.jpeg" }
+    ]
+  },
+
+  /* === Chamarras y Sudaderas 4 === */
+  {
+    category: "Chamarras y Sudaderas",
+    name: "Chamarras y Sudaderas 4",
+    description: "Colección Chamarras y Sudaderas.",
+    models: [
         { image: "./img2/ChamarrasYSudaderas/cs43.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs44.jpeg" },
         { image: "./img2/ChamarrasYSudaderas/cs45.jpeg" },
@@ -1521,6 +1631,7 @@ const products = [
         { image: "./img2/ChamarrasYSudaderas/cs54.jpeg" }
     ]
   }
+
 ];
 
 
