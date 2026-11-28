@@ -1652,7 +1652,7 @@ const products = [
     description: "Colección de Lociones Victorias Secrets.",
     models: [
       {
-        image: "./img/Lociones _Victorias_Secrets/lc1.jpg"
+        image: "./img/Lociones_Victorias_Secrets/lc1.jpg"
       }
     ]
   },
@@ -2376,7 +2376,7 @@ const productsContainer = document.getElementById("productsContainer");
 
 
 /* =========================
-   Render categories
+   Categories
 ========================= */
 
 function renderCategories() {
@@ -2387,24 +2387,26 @@ function renderCategories() {
   ];
 
   categoriesElement.innerHTML = categories
-    .map((category, index) => `
-      <button
-        type="button"
-        class="${index === 0 ? "active" : ""}"
-        data-category="${category}"
-        aria-pressed="${index === 0}"
-      >
+    .map((category, i) => `
+      <button type="button"
+              class="${i === 0 ? "active" : ""}"
+              data-category="${category}"
+              aria-pressed="${i === 0}">
         ${category}
-      </button>
-    `)
+      </button>`)
     .join("");
+}
 
   // Listen for category clicks.
   categoriesElement.onclick = function(event) {
 
     const button = event.target.closest("button");
 
-    if (!button) return;
+  categoriesElement.querySelectorAll("button").forEach(item => {
+    const on = item === button;
+    item.classList.toggle("active", on);
+    item.setAttribute("aria-pressed", on);
+  });
 
     const selectedCategory = button.dataset.category;
 
@@ -2427,10 +2429,13 @@ function renderCategories() {
   };
 }
 
+function renderNextBatch() {
+  const slice = currentList.slice(rendered, rendered + BATCH);
 
-/* =========================
-   Render products
-========================= */
+  productsContainer.insertAdjacentHTML(
+    "beforeend",
+    slice.map((p, i) => sectionHTML(p, rendered + i)).join("")
+  );
 
 function renderProducts(productsToShow) {
 
@@ -2514,13 +2519,23 @@ function renderProducts(productsToShow) {
     })
     .join("");
 
-  attachModelEvents(productsToShow);
-  attachCarouselEvents();
+// Carga más productos cuando el usuario se acerca al final
+const observer = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && rendered < currentList.length) {
+    renderNextBatch();
+    recheckSentinel();
+  }
+}, { rootMargin: "600px" });
+
+// Fuerza una nueva revisión (por si el sentinel sigue visible)
+function recheckSentinel() {
+  observer.unobserve(sentinel);
+  observer.observe(sentinel);
 }
 
 
 /* =========================
-   Select a model
+   Clics: miniaturas y flechas (un solo listener)
 ========================= */
 
 function attachModelEvents(productsToShow) {
@@ -2565,12 +2580,16 @@ function attachModelEvents(productsToShow) {
       });
 
     });
-}
+    return;
+  }
 
+  const thumb = e.target.closest(".thumbnail");
+  if (!thumb) return;
 
-/* =========================
-   Carousel navigation
-========================= */
+  const product = currentList[Number(section.dataset.product)];
+  const mi = Number(thumb.dataset.model);
+  const model = product.models[mi];
+  const main = section.querySelector(".main-image");
 
 function attachCarouselEvents() {
 
@@ -2599,7 +2618,7 @@ function attachCarouselEvents() {
 
 
 /* =========================
-   Initialize catalog
+   Init
 ========================= */
 
 renderCategories();
