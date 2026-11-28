@@ -1652,7 +1652,7 @@ const products = [
     description: "Colección de Lociones Victorias Secrets.",
     models: [
       {
-        image: "./img/Lociones_Victorias_Secrets/lc1.jpg"
+        image: "./img/Lociones _Victorias_Secrets/lc1.jpg"
       }
     ]
   },
@@ -1979,7 +1979,6 @@ const products = [
     { image: "./img2/Gorras/gr108.jpeg" },
     { image: "./img2/Gorras/gr109.jpeg" },
     { image: "./img2/Gorras/gr110.jpeg" },
-    { image: "./img2/Gorras/gr111.jpeg" },
     { image: "./img2/Gorras/gr112.jpeg" },
     { image: "./img2/Gorras/gr113.jpeg" },
     { image: "./img2/Gorras/gr114.jpeg" },
@@ -2233,7 +2232,6 @@ const products = [
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM97.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM98.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM99.jpeg" },
-    { image: "./img2/PerfumesOriginalesParaDama/PrfODM100.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM101.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM102.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM103.jpeg" },
@@ -2363,181 +2361,238 @@ const products = [
 ];
 
 
+
+
+
+
+
 /* =========================
    DOM elements
 ========================= */
 
-const categoriesElement = document.getElementById("categories");
-const productsContainer = document.getElementById("productsContainer");
-const sentinel = document.getElementById("sentinel");
+const categoriesElement =
+  document.getElementById("categories");
 
-const BATCH = 6;
-let currentList = [];
-let rendered = 0;
-
-const getName = (product, model, i) =>
-  model.name || `${product.name} ${i + 1}`;
+const productsContainer =
+  document.getElementById("productsContainer");
 
 
 /* =========================
-   Categories
+   Render categories
 ========================= */
 
 function renderCategories() {
   const categories = [
     "Todos",
-    ...new Set(products.map(p => p.category))
+    ...new Set(products.map(product => product.category))
   ];
 
   categoriesElement.innerHTML = categories
-    .map((category, i) => `
-      <button type="button"
-              class="${i === 0 ? "active" : ""}"
-              data-category="${category}"
-              aria-pressed="${i === 0}">
+    .map((category, index) => `
+      <button
+        type="button"
+        class="${index === 0 ? "active" : ""}"
+        data-category="${category}"
+        aria-pressed="${index === 0}"
+      >
         ${category}
-      </button>`)
+      </button>
+    `)
     .join("");
-}
 
-categoriesElement.addEventListener("click", e => {
-  const button = e.target.closest("button");
-  if (!button) return;
+  categoriesElement.addEventListener("click", event => {
+    const button = event.target.closest("button");
 
-  categoriesElement.querySelectorAll("button").forEach(item => {
-    const on = item === button;
-    item.classList.toggle("active", on);
-    item.setAttribute("aria-pressed", on);
+    if (!button) return;
+
+    // Update the active category.
+    categoriesElement
+      .querySelectorAll("button")
+      .forEach(item => {
+        const isActive = item === button;
+
+        item.classList.toggle("active", isActive);
+        item.setAttribute("aria-pressed", isActive);
+      });
+
+    const selectedCategory = button.dataset.category;
+
+    // "Todos" displays every product.
+    const filteredProducts =
+      selectedCategory === "Todos"
+        ? products
+        : products.filter(
+            product => product.category === selectedCategory
+          );
+
+    renderProducts(filteredProducts);
   });
-
-  const selected = button.dataset.category;
-  renderProducts(
-    selected === "Todos"
-      ? products
-      : products.filter(p => p.category === selected)
-  );
-});
+}
 
 
 /* =========================
-   Products (render por lotes)
+   Render products
 ========================= */
 
-function sectionHTML(product, index) {
-  const first = index === 0;
-  const firstModel = product.models[0];
+function renderProducts(productsToShow) {
+  productsContainer.innerHTML = productsToShow
+    .map((product, productIndex) => `
+      <section class="product-section">
 
-  return `
-    <section class="product-section" data-product="${index}">
-      <img class="main-image"
-           src="${firstModel.image}"
-           alt="${getName(product, firstModel, 0)}"
-           decoding="async"
-           ${first ? 'fetchpriority="high"' : 'loading="lazy"'}
-           onerror="this.style.display='none'">
+        <img
+          class="main-image"
+          id="main-image-${productIndex}"
+          src="${product.models[0].image}"
+          alt="${product.name}: ${product.models[0].name}"
+        >
 
-      <div class="product-info">
-        <h2>${product.name}</h2>
-      </div>
-
-      <div class="carousel-container">
-        <button type="button" class="arrow" data-direction="-1"
-                aria-label="Anteriores de ${product.name}">&#8249;</button>
-
-        <div class="carousel">
-          ${product.models.map((m, mi) => `
-            <button type="button"
-                    class="thumbnail ${mi === 0 ? "active" : ""}"
-                    data-model="${mi}"
-                    aria-label="Ver ${getName(product, m, mi)}"
-                    aria-pressed="${mi === 0}">
-              <img src="${m.image}"
-                   alt="${getName(product, m, mi)}"
-                   loading="lazy" decoding="async"
-                   onerror="this.closest('button').remove()">
-            </button>`).join("")}
+        <div class="product-info">
+          <h2>${product.name}</h2>
+          <p>${product.description}</p>
         </div>
 
-        <button type="button" class="arrow" data-direction="1"
-                aria-label="Siguientes de ${product.name}">&#8250;</button>
-      </div>
-    </section>`;
-}
+        <section class="models">
+          <h3>Modelos disponibles</h3>
 
-function renderNextBatch() {
-  const slice = currentList.slice(rendered, rendered + BATCH);
+          <div class="carousel-container">
 
-  productsContainer.insertAdjacentHTML(
-    "beforeend",
-    slice.map((p, i) => sectionHTML(p, rendered + i)).join("")
-  );
+            <button
+              type="button"
+              class="arrow"
+              data-direction="-1"
+              data-carousel="${productIndex}"
+              aria-label="Modelos anteriores de ${product.name}"
+            >
+              &#8249;
+            </button>
 
-  rendered += slice.length;
-}
+            <div
+              class="carousel"
+              id="carousel-${productIndex}"
+            >
+              ${product.models
+                .map((model, modelIndex) => `
+                  <button
+                    type="button"
+                    class="thumbnail ${
+                      modelIndex === 0 ? "active" : ""
+                    }"
+                    data-product="${productIndex}"
+                    data-model="${modelIndex}"
+                    aria-label="Seleccionar ${model.name}"
+                    aria-pressed="${modelIndex === 0}"
+                  >
+                    <img
+                      src="${model.image}"
+                      alt="${model.name}"
+                      loading="lazy"
+                    >
+                  </button>
+                `)
+                .join("")}
+            </div>
 
-function renderProducts(list) {
-  currentList = list.filter(p => p.models && p.models.length);
-  rendered = 0;
-  productsContainer.innerHTML = "";
-  renderNextBatch();
-  recheckSentinel();
-}
+            <button
+              type="button"
+              class="arrow"
+              data-direction="1"
+              data-carousel="${productIndex}"
+              aria-label="Modelos siguientes de ${product.name}"
+            >
+              &#8250;
+            </button>
 
-// Carga más productos cuando el usuario se acerca al final
-const observer = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting && rendered < currentList.length) {
-    renderNextBatch();
-    recheckSentinel();
-  }
-}, { rootMargin: "600px" });
+          </div>
+        </section>
 
-// Fuerza una nueva revisión (por si el sentinel sigue visible)
-function recheckSentinel() {
-  observer.unobserve(sentinel);
-  observer.observe(sentinel);
+      </section>
+    `)
+    .join("");
+
+  attachModelEvents(productsToShow);
+  attachCarouselEvents();
 }
 
 
 /* =========================
-   Clics: miniaturas y flechas (un solo listener)
+   Select a model
 ========================= */
 
-productsContainer.addEventListener("click", e => {
-  const section = e.target.closest(".product-section");
-  if (!section) return;
+function attachModelEvents(productsToShow) {
+  productsContainer
+    .querySelectorAll(".thumbnail")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        const productIndex =
+          Number(button.dataset.product);
 
-  const arrow = e.target.closest(".arrow");
-  if (arrow) {
-    section.querySelector(".carousel").scrollBy({
-      left: Number(arrow.dataset.direction) * 250,
-      behavior: "smooth"
+        const modelIndex =
+          Number(button.dataset.model);
+
+        const product = productsToShow[productIndex];
+        const model = product.models[modelIndex];
+
+        const mainImage = document.getElementById(
+          `main-image-${productIndex}`
+        );
+
+        const carousel = document.getElementById(
+          `carousel-${productIndex}`
+        );
+
+        // Update the main image.
+        mainImage.src = model.image;
+        mainImage.alt = `${product.name}: ${model.name}`;
+
+        // Update the selected thumbnail.
+        carousel
+          .querySelectorAll(".thumbnail")
+          .forEach((thumbnail, index) => {
+            const isSelected = index === modelIndex;
+
+            thumbnail.classList.toggle("active", isSelected);
+
+            thumbnail.setAttribute(
+              "aria-pressed",
+              isSelected
+            );
+          });
+      });
     });
-    return;
-  }
-
-  const thumb = e.target.closest(".thumbnail");
-  if (!thumb) return;
-
-  const product = currentList[Number(section.dataset.product)];
-  const mi = Number(thumb.dataset.model);
-  const model = product.models[mi];
-  const main = section.querySelector(".main-image");
-
-  main.style.display = "";
-  main.src = model.image;
-  main.alt = getName(product, model, mi);
-
-  section.querySelectorAll(".thumbnail").forEach(t => {
-    const on = t === thumb;
-    t.classList.toggle("active", on);
-    t.setAttribute("aria-pressed", on);
-  });
-});
+}
 
 
 /* =========================
-   Init
+   Carousel navigation
+========================= */
+
+function attachCarouselEvents() {
+  productsContainer
+    .querySelectorAll(".arrow")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        const productIndex =
+          Number(button.dataset.carousel);
+
+        const direction =
+          Number(button.dataset.direction);
+
+        const carousel = document.getElementById(
+          `carousel-${productIndex}`
+        );
+
+        carousel.scrollBy({
+          left: direction * 250,
+          behavior: "smooth"
+        });
+      });
+    });
+}
+
+
+/* =========================
+   Initialize catalog
 ========================= */
 
 renderCategories();
-
+renderProducts(products);   
