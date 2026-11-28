@@ -1979,7 +1979,6 @@ const products = [
     { image: "./img2/Gorras/gr108.jpeg" },
     { image: "./img2/Gorras/gr109.jpeg" },
     { image: "./img2/Gorras/gr110.jpeg" },
-    { image: "./img2/Gorras/gr111.jpeg" },
     { image: "./img2/Gorras/gr112.jpeg" },
     { image: "./img2/Gorras/gr113.jpeg" },
     { image: "./img2/Gorras/gr114.jpeg" },
@@ -2233,7 +2232,6 @@ const products = [
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM97.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM98.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM99.jpeg" },
-    { image: "./img2/PerfumesOriginalesParaDama/PrfODM100.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM101.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM102.jpeg" },
     { image: "./img2/PerfumesOriginalesParaDama/PrfODM103.jpeg" },
@@ -2366,15 +2364,15 @@ const products = [
 
 
 
+
+
+
 /* =========================
    DOM elements
 ========================= */
 
-const categoriesElement =
-  document.getElementById("categories");
-
-const productsContainer =
-  document.getElementById("productsContainer");
+const categoriesElement = document.getElementById("categories");
+const productsContainer = document.getElementById("productsContainer");
 
 
 /* =========================
@@ -2382,8 +2380,9 @@ const productsContainer =
 ========================= */
 
 function renderCategories() {
+
+  // Get unique categories without "Todos".
   const categories = [
-    "Todos",
     ...new Set(products.map(product => product.category))
   ];
 
@@ -2400,33 +2399,32 @@ function renderCategories() {
     `)
     .join("");
 
-  categoriesElement.addEventListener("click", event => {
+  // Listen for category clicks.
+  categoriesElement.onclick = function(event) {
+
     const button = event.target.closest("button");
 
     if (!button) return;
 
-    // Update the active category.
+    const selectedCategory = button.dataset.category;
+
+    // Update active button.
     categoriesElement
       .querySelectorAll("button")
       .forEach(item => {
-        const isActive = item === button;
+        const active = item === button;
 
-        item.classList.toggle("active", isActive);
-        item.setAttribute("aria-pressed", isActive);
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", active);
       });
 
-    const selectedCategory = button.dataset.category;
-
-    // "Todos" displays every product.
-    const filteredProducts =
-      selectedCategory === "Todos"
-        ? products
-        : products.filter(
-            product => product.category === selectedCategory
-          );
+    // Filter selected category.
+    const filteredProducts = products.filter(
+      product => product.category === selectedCategory
+    );
 
     renderProducts(filteredProducts);
-  });
+  };
 }
 
 
@@ -2435,78 +2433,85 @@ function renderCategories() {
 ========================= */
 
 function renderProducts(productsToShow) {
+
   productsContainer.innerHTML = productsToShow
-    .map((product, productIndex) => `
-      <section class="product-section">
+    .map((product, productIndex) => {
 
-        <img
-          class="main-image"
-          id="main-image-${productIndex}"
-          src="${product.models[0].image}"
-          alt="${product.name}: ${product.models[0].name}"
-        >
+      if (!product.models || product.models.length === 0) {
+        return "";
+      }
 
-        <div class="product-info">
-          <h2>${product.name}</h2>
-          <p>${product.description}</p>
-        </div>
+      return `
+        <section class="product-section">
 
-        <section class="models">
-          <h3>Modelos disponibles</h3>
+          <img
+            class="main-image"
+            id="main-image-${productIndex}"
+            src="${product.models[0].image}"
+            alt="${product.name}"
+          >
 
-          <div class="carousel-container">
-
-            <button
-              type="button"
-              class="arrow"
-              data-direction="-1"
-              data-carousel="${productIndex}"
-              aria-label="Modelos anteriores de ${product.name}"
-            >
-              &#8249;
-            </button>
-
-            <div
-              class="carousel"
-              id="carousel-${productIndex}"
-            >
-              ${product.models
-                .map((model, modelIndex) => `
-                  <button
-                    type="button"
-                    class="thumbnail ${
-                      modelIndex === 0 ? "active" : ""
-                    }"
-                    data-product="${productIndex}"
-                    data-model="${modelIndex}"
-                    aria-label="Seleccionar ${model.name}"
-                    aria-pressed="${modelIndex === 0}"
-                  >
-                    <img
-                      src="${model.image}"
-                      alt="${model.name}"
-                      loading="lazy"
-                    >
-                  </button>
-                `)
-                .join("")}
-            </div>
-
-            <button
-              type="button"
-              class="arrow"
-              data-direction="1"
-              data-carousel="${productIndex}"
-              aria-label="Modelos siguientes de ${product.name}"
-            >
-              &#8250;
-            </button>
-
+          <div class="product-info">
+            <h2>${product.name}</h2>
+            <p>${product.description}</p>
           </div>
-        </section>
 
-      </section>
-    `)
+          <section class="models">
+            <h3>Modelos disponibles</h3>
+
+            <div class="carousel-container">
+
+              <button
+                type="button"
+                class="arrow"
+                data-direction="-1"
+                data-carousel="${productIndex}"
+                aria-label="Modelos anteriores"
+              >
+                &#8249;
+              </button>
+
+              <div
+                class="carousel"
+                id="carousel-${productIndex}"
+              >
+                ${product.models
+                  .map((model, modelIndex) => `
+                    <button
+                      type="button"
+                      class="thumbnail ${
+                        modelIndex === 0 ? "active" : ""
+                      }"
+                      data-product="${productIndex}"
+                      data-model="${modelIndex}"
+                      aria-pressed="${modelIndex === 0}"
+                    >
+                      <img
+                        src="${model.image}"
+                        alt="${model.name || `Modelo ${modelIndex + 1}`}"
+                        loading="lazy"
+                      >
+                    </button>
+                  `)
+                  .join("")}
+              </div>
+
+              <button
+                type="button"
+                class="arrow"
+                data-direction="1"
+                data-carousel="${productIndex}"
+                aria-label="Modelos siguientes"
+              >
+                &#8250;
+              </button>
+
+            </div>
+          </section>
+
+        </section>
+      `;
+    })
     .join("");
 
   attachModelEvents(productsToShow);
@@ -2519,15 +2524,15 @@ function renderProducts(productsToShow) {
 ========================= */
 
 function attachModelEvents(productsToShow) {
+
   productsContainer
     .querySelectorAll(".thumbnail")
     .forEach(button => {
-      button.addEventListener("click", () => {
-        const productIndex =
-          Number(button.dataset.product);
 
-        const modelIndex =
-          Number(button.dataset.model);
+      button.addEventListener("click", () => {
+
+        const productIndex = Number(button.dataset.product);
+        const modelIndex = Number(button.dataset.model);
 
         const product = productsToShow[productIndex];
         const model = product.models[modelIndex];
@@ -2540,24 +2545,25 @@ function attachModelEvents(productsToShow) {
           `carousel-${productIndex}`
         );
 
-        // Update the main image.
         mainImage.src = model.image;
-        mainImage.alt = `${product.name}: ${model.name}`;
+        mainImage.alt = product.name;
 
-        // Update the selected thumbnail.
         carousel
           .querySelectorAll(".thumbnail")
           .forEach((thumbnail, index) => {
-            const isSelected = index === modelIndex;
 
-            thumbnail.classList.toggle("active", isSelected);
+            const selected = index === modelIndex;
+
+            thumbnail.classList.toggle("active", selected);
 
             thumbnail.setAttribute(
               "aria-pressed",
-              isSelected
+              selected
             );
           });
+
       });
+
     });
 }
 
@@ -2567,15 +2573,15 @@ function attachModelEvents(productsToShow) {
 ========================= */
 
 function attachCarouselEvents() {
+
   productsContainer
     .querySelectorAll(".arrow")
     .forEach(button => {
-      button.addEventListener("click", () => {
-        const productIndex =
-          Number(button.dataset.carousel);
 
-        const direction =
-          Number(button.dataset.direction);
+      button.addEventListener("click", () => {
+
+        const productIndex = Number(button.dataset.carousel);
+        const direction = Number(button.dataset.direction);
 
         const carousel = document.getElementById(
           `carousel-${productIndex}`
@@ -2585,7 +2591,9 @@ function attachCarouselEvents() {
           left: direction * 250,
           behavior: "smooth"
         });
+
       });
+
     });
 }
 
@@ -2595,4 +2603,14 @@ function attachCarouselEvents() {
 ========================= */
 
 renderCategories();
-renderProducts(products);   
+
+// Show first category automatically.
+const firstCategory = products[0]?.category;
+
+if (firstCategory) {
+
+  renderProducts(
+    products.filter(product => product.category === firstCategory)
+  );
+
+}
