@@ -1652,7 +1652,7 @@ const products = [
     description: "Colección de Lociones Victorias Secrets.",
     models: [
       {
-        image: "./img/Lociones _Victorias_Secrets/lc1.jpg"
+        image: "./img/Lociones_Victorias_Secrets/lc1.jpg"
       }
     ]
   },
